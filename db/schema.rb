@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160620162847) do
   add_index "attachments", ["article_id"], name: "index_attachments_on_article_id"
 
   create_table "comments", force: :cascade do |t|
+    t.integer  "article_id", null: false
     t.integer  "user_id",    null: false
     t.integer  "parent_id"
     t.string   "content",    null: false
