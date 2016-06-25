@@ -14,5 +14,6 @@ class CreateArticles < ActiveRecord::Migration
     add_index :articles, :user_id
     add_index :articles, :title
     add_index :articles, :content
+    add_foreign_key :articles, :users, column: :user_id, primary_key: "id"
   end
 end
