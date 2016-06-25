@@ -4,7 +4,7 @@
 # Create Tags
 tags = []
 Random.rand(1..10).times do |i|
- tags << Tag.create(name: "moka", slug: "coffee ##{i}")
+ tags << Tag.create(name: Forgery('lorem_ipsum').word, slug: Forgery('lorem_ipsum').word)
 end
 
 # Create Users
@@ -13,11 +13,11 @@ articles = []
 comments = []
 
 10.times do |i|
-  user = User.create(name: "moka Lee ##{i}", email: "test#{i}@aa.com", password: 1234)
+  user = User.create(name: Forgery::Name.full_name, email: Forgery::Internet.email_address, password: Forgery::Basic.password)
 
   # Create Articles
   Random.rand(1..10).times do |j|
-    article = Article.create(user_id: user.id, title: "Article ##{j}", content: "content", notification: 0, view_count: Random.rand(1...100))
+    article = Article.create(user_id: user.id, title: Forgery('lorem_ipsum').title, content: Forgery('lorem_ipsum').paragraphs, notification: 0, view_count: Random.rand(1...500))
     articles << article
 
     # Relation Tag & Articles
@@ -32,9 +32,9 @@ comments = []
     # Create Comments
     10.times do |i|
       if i > 1 and Random.rand(1..3) == 1
-        comments << Comment.create(user_id: user.id, article_id: article.id, parent_id: Random.rand(1...i), content: "Comment Foo Bar ##{i}")
+        comments << Comment.create(user_id: user.id, article_id: article.id, parent_id: Random.rand(1...i), content: Forgery(:lorem_ipsum).words(6))
       else
-        comments << Comment.create(user_id: user.id, article_id: article.id, content: "Comment Foo Bar ##{i}")
+        comments << Comment.create(user_id: user.id, article_id: article.id, content: Forgery(:lorem_ipsum).words(6))
       end
     end
   end
@@ -45,7 +45,7 @@ end
 # Create Attachments
 20.times do |i|
   article_id = articles[Random.rand(0...articles.length)].id
-  Attachment.create(article_id: article_id, filename: "attachment ##{i}", mime: "image/image")
+  Attachment.create(article_id: article_id, filename: Forgery('name').company_name, mime: "image/image")
 end
 
 # Create Votes
