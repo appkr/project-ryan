@@ -45,3 +45,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'slim', '3.0.7'
