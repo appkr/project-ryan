@@ -25,8 +25,16 @@
 ## Configuration
 
 ## Database creation
+``` ruby
+$ rake db:drop
+$ rake db:create
+```
 
 ## Database initialization
+``` ruby
+$ rake db:migrate
+$ rake db:seed
+```
 
 ## How to run the test suite
 
