@@ -23,7 +23,7 @@ comments = []
     # Relation Tag & Articles
     Random.rand(1..4).times do |k|
       tag_id = tags[Random.rand(0...tags.length)].id
-      
+
       unless ArticleTag.exists?(tag_id: tag_id)
         ArticleTag.create(article_id: article.id, tag_id: tag_id)
       end
@@ -52,7 +52,7 @@ end
 Random.rand(10..20).times do |i|
   comment_id = comments[Random.rand(0...comments.length)].id
   user_id = users[Random.rand(0...users.length)].id
-  Vote.create(comment_id: comment_id, user_id: user_id, voted_at: Time.now)
+  Vote.create(comment_id: comment_id, user_id: user_id)
 end
 
 # Relation Follow User
@@ -61,7 +61,6 @@ Random.rand(10..30).times do |i|
   followee_id = users[Random.rand(0...users.length)].id
 
   unless Follow.where(user_id: user_id, followee_id: followee_id).first
-    Follow.create(followee_id: followee_id, user_id: user_id)  	
+    Follow.create(followee_id: followee_id, user_id: user_id)
   end
 end
-
