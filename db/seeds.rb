@@ -61,6 +61,8 @@ Random.rand(10..30).times do |i|
   followee_id = users[Random.rand(0...users.length)].id
 
   unless Follow.where(user_id: user_id, followee_id: followee_id).first
-    Follow.create(followee_id: followee_id, user_id: user_id)
+    unless user_id == followee_id
+      Follow.create(followee_id: followee_id, user_id: user_id)
+    end
   end
 end

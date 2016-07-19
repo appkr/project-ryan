@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       if user[:password] == params[:password]
         reset_session
         session[:email] = user.email
-        redirect_to users_url
+        redirect_to root_path
       else
         flash[:alert] = 'Invalid email/password combination'
         render 'new'

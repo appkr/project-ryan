@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end
+
+    def current_user
+      return unless session[:email]
+      @current_user ||= User.find_by(email: session[:email])
+    end
 end

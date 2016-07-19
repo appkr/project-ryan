@@ -1,3 +1,16 @@
+GIT
+  remote: git://github.com/reactjs/react-rails.git
+  revision: d854ff96c81c0b85e8d3570e1fae0fa0e3f44e21
+  branch: master
+  specs:
+    react-rails (1.8.0)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,6 +50,10 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -49,6 +66,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    connection_pool (2.2.0)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -118,6 +136,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    showdown-rails (0.0.4)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
     spring (1.7.1)
     sprockets (3.6.1)
       concurrent-ruby (~> 1.0)
@@ -152,8 +173,10 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.6)
+  react-rails!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  showdown-rails
   spring
   sqlite3
   turbolinks
