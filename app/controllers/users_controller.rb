@@ -10,6 +10,21 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    isOwner = false
+    if ( current_user.id == @user.id )
+      isOwner = true
+    end
+    
+    following_users = @user.following
+    scope = {
+      isOwner: isOwner,
+      following_users: following_users,
+      following_count: following_users.count,
+      followed_cont: @user.followers.count,
+      is_follow: current_user.following?(@user)
+    }
+
+    render component: 'Profile', props: { user: @user, scope: scope }, prerender: true
   end
 
   # GET /users/new
@@ -24,7 +39,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-
     @user = User.new(user_params)
 
     respond_to do |format|

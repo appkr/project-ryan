@@ -9,8 +9,7 @@ var Rending = React.createClass({
 /* ************************************************************************ */
   render: function() {
     
-    var test = this.props.following_users.count;
-	var followingUsers = this.props.following_users.map(function(user) {
+	  var followingUsers = this.props.following_users.map(function(user) {
       return (
         <div>
           email : {user.email} , name : {user.name}
