@@ -1,0 +1,17 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Project Ryan", "#", id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "프로필", "#" %></li>
+        <li><%= link_to "팔로잉", "#" %></li>
+        <% if session[:email] %>
+            <li><%= link_to session[:email], "#" %></li>
+            <li><%= link_to '로그아웃', logout_path, method: :delete %></li>
+        <% else %>
+            <li><%= link_to "Log in", "#" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
