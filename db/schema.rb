@@ -94,7 +94,6 @@ ActiveRecord::Schema.define(version: 20160620162847) do
     t.integer  "comment_id", null: false
     t.integer  "up"
     t.integer  "down"
-    t.integer  "voted_at",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

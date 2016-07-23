@@ -4,8 +4,16 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one: {
+    id: 111,
+    name: "first tag",
+    slug: "tag1"
+  }
 # column: value
 #
-two: {}
+two: {
+    id: 222,
+    name: "second tag",
+    slug: "tag2"
+  }
 #  column: value

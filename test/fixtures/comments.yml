@@ -4,8 +4,18 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one: {
+    id: 123125418,
+    user_id: 12381231,
+    article_id: 12381231,
+    content: "Good Job!!!"
+  }
 # column: value
 #
-two: {}
+two: {
+    id: 2231123,
+    user_id: 123125418,
+    article_id: 123125418,
+    content: "Nice!!"
+  }
 #  column: value
