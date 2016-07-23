@@ -7,7 +7,7 @@ class SessionsControllerTest < ActionController::TestCase
 
   test "shoud login" do
       post :create, email: @user.email, password: @user.password
-      assert_redirected_to users_path
+      assert_redirected_to '/'
   end
 
   test "should get new" do
