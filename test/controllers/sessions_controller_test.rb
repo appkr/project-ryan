@@ -15,12 +15,12 @@ class SessionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "shoud login with wrong password" do
+  test "login with wrong password" do
     post :create, email: @user.email, password: 'wrong password'
     assert_equal 'Invalid email/password combination', flash[:alert]
   end
 
-  test "shoud login with blank email" do
+  test "login with blank email" do
     post :create, password: @user.email
     assert_equal 'Invalid email/password combination', flash[:alert]
   end
