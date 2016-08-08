@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20160620162847) do
   add_index "article_tags", ["tag_id"], name: "index_article_tags_on_tag_id"
 
   create_table "articles", force: :cascade do |t|
-    t.integer  "user_id",      null: false
-    t.string   "title",        null: false
-    t.string   "content",      null: false
-    t.integer  "notification", null: false
-    t.integer  "view_count",   null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "user_id",                  null: false
+    t.string   "title",                    null: false
+    t.string   "content",                  null: false
+    t.integer  "notification", default: 0
+    t.integer  "view_count",   default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "articles", ["content"], name: "index_articles_on_content"

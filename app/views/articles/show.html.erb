@@ -1,0 +1,16 @@
+<h2>게시글 내용</h2>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @article.content %>
+</p>
+
+<hr>
+
+<%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default' %>
+<%= link_to 'Back', articles_path, class: 'btn btn-default' %>

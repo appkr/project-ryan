@@ -1,0 +1,29 @@
+<h2>게시글 목록</h2>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>제목</th>
+    <th>작성자</th>
+    <th>작성 일</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @articles.reverse.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.user.name %></td>
+        <td><%= article.created_at %></td>
+        <td>
+          <%= link_to 'Show', article, class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-default' %>
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'New Post', new_article_path, class: 'btn btn-default' %>

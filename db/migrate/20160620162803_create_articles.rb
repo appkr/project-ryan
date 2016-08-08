@@ -5,8 +5,8 @@ class CreateArticles < ActiveRecord::Migration
       t.integer :user_id, null: false
       t.string :title, null: false
       t.string :content, null: false
-      t.integer :notification, null: false
-      t.integer :view_count, null: false
+      t.integer :notification, default: 0
+      t.integer :view_count, default: 0
 
       t.timestamps null: false
     end
