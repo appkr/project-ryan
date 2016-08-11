@@ -17,8 +17,8 @@
         <td><%= article.created_at %></td>
         <td>
           <%= link_to 'Show', article, class: 'btn btn-default' %>
-          <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-default' %>
-          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-default'  if article.user_id == @current_user.id%>
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'  if article.user_id == @current_user.id %>
         </td>
       </tr>
   <% end %>
