@@ -12,5 +12,6 @@
 
 <hr>
 
-<%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default' if @article.user_id == @current_user.id  %>
-<%= link_to 'Back', articles_path, class: 'btn btn-default' %>
+<%= link_to '수정', edit_article_path(@article), class: 'btn btn-default' if @article.user_id == @current_user.id  %>
+<%= link_to '삭제', article_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'  if @article.user_id == @current_user.id %>
+<%= link_to '뒤로가기', articles_path, class: 'btn btn-default' %>

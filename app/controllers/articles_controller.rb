@@ -25,6 +25,13 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @current_user = current_user
+
+    # 자기 자신의 글은 count 안되게 설정
+    # 새로고침을 하면 view_count가 올라가는 이슈 처리해야 함
+    unless @article.user_id == current_user.id
+      @article.view_count += 1
+      @article.save!
+    end
   end
 
   def edit
