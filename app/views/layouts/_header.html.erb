@@ -1,8 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Project Ryan", "#", id: "logo" %>
+    <%= link_to "Project Ryan", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to '게시판', articles_path %></li>
         <li><%= link_to "프로필", "#" %></li>
         <li><%= link_to "팔로잉", "#" %></li>
         <% if session[:email] %>

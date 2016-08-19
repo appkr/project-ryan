@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-gem 'bootstrap-sass',       '3.2.0.0'
+gem 'bootstrap-sass', '~> 3.3.3'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -53,3 +53,5 @@ group :development do
 end
 
 gem 'slim', '3.0.7'
+gem 'simple_form', '3.1.0'
+gem 'pry-rails'

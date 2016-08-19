@@ -1,0 +1,7 @@
+<h2>게시글 수정</h2>
+
+<%= render 'form' %>
+
+<hr>
+<%= link_to '삭제', article_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'  if @article.user_id == @current_user.id %>
+<%= link_to '뒤로가기', root_path, class: 'btn btn-default' %>

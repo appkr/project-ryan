@@ -1,0 +1,29 @@
+<h2>게시글 목록</h2>
+<table class="table" style="width: 100%" >
+  <thead>
+  <tr>
+    <th style="width: 40%">제목</th>
+    <th style="width: 10%">작성자</th>
+    <th style="width: 10%">작성 일</th>
+    <th style="width: 10%">조회수</th>
+   </tr>
+  </thead>
+
+  <tbody>
+
+  <% @articles.reverse.each do |article| %>
+      <tr>
+        <td><%= link_to article.title, article %></td>
+        <td><%= article.user.name %></td>
+        <td><%= article.created_at.strftime("%y-%m-%d") %></td>
+        <td><%= article.view_count %></td>
+        <td>
+          <%= link_to '수정', edit_article_path(article), class: 'btn btn-default'  if article.user_id == @current_user.id%>
+          <%= link_to '삭제', article_path(article.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'  if article.user_id == @current_user.id %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+
+</table>
+<%= link_to '글 작성', new_article_path, class: 'btn btn-default', style: 'align: center'%>
